@@ -1,0 +1,15 @@
+{
+  "name": "pterodactyl-test-site",
+  "version": "1.0.0",
+  "description": "Test website for Pterodactyl panel deployment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["pterodactyl", "nodejs", "express"],
+  "author": "Joy Tree Host",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
