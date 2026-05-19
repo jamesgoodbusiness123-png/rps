@@ -1,123 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Site - Joy Tree Host</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .container {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            color: #667eea;
-            margin-bottom: 20px;
-        }
-        
-        .emoji {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-        
-        .success {
-            background: #22c55e;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .info {
-            background: #f3f4f6;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: left;
-        }
-        
-        .info h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .info p {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        
-        code {
-            background: #1f2937;
-            color: #22c55e;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogiFlow | Autonomous Backend Generator</title>
+  <style>
+    :root{--bg:#070814;--panel:#101425;--panel2:#151a31;--line:#27304d;--text:#f5f7ff;--muted:#9ba8c9;--accent:#9b5cff;--cyan:#20e5ff;--green:#42f59b;--red:#ff5c7c;--amber:#ffc857;--shadow:0 24px 80px rgba(0,0,0,.42);--radius:22px}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at 10% 0%,rgba(155,92,255,.32),transparent 32%),radial-gradient(circle at 90% 20%,rgba(32,229,255,.18),transparent 26%),linear-gradient(135deg,#060712,#0d1020 55%,#111633);color:var(--text);min-height:100vh;overflow-x:hidden}button,input,select,textarea{font:inherit}button{border:0;cursor:pointer;color:inherit}.app{display:grid;grid-template-columns:292px 1fr;min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;padding:22px;background:rgba(9,11,25,.78);border-right:1px solid rgba(255,255,255,.08);backdrop-filter:blur(24px);display:flex;flex-direction:column;gap:20px}.brand{display:flex;gap:14px;align-items:center}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--cyan));display:grid;place-items:center;font-size:25px;box-shadow:0 0 32px rgba(155,92,255,.5)}.brand h1{font-size:20px;line-height:1.05;margin:0}.brand span,.subtitle,.muted{color:var(--muted)}.status-card{border:1px solid rgba(255,255,255,.09);border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));padding:15px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 16px var(--green);margin-right:8px}.nav{display:grid;gap:10px}.nav button{width:100%;display:flex;align-items:center;gap:12px;padding:14px 15px;border-radius:16px;background:transparent;color:var(--muted);text-align:left;transition:.2s}.nav button:hover,.nav button.active{background:linear-gradient(135deg,rgba(155,92,255,.28),rgba(32,229,255,.12));color:white;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}.nav .ico{font-size:22px}.content{padding:24px;min-width:0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px}.topbar h2{font-size:clamp(24px,4vw,42px);margin:0;letter-spacing:-.04em}.topbar p{margin:5px 0 0;color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border-radius:14px;padding:11px 15px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);box-shadow:0 12px 30px rgba(0,0,0,.18);transition:.2s}.btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.22)}.primary{background:linear-gradient(135deg,var(--accent),#6f5cff);color:white}.success{background:linear-gradient(135deg,#15b86a,#26d990);color:#04150d}.danger{background:linear-gradient(135deg,#ff4470,#ff7b5c)}.page{display:none}.page.active{display:block}.grid{display:grid;gap:18px}.designer{grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr)}.card{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.032));border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;min-width:0}.card h3{margin:0 0 12px;font-size:18px}.canvas-wrap{position:relative;height:610px;border-radius:20px;overflow:hidden;background-color:#0a0d1d;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px),radial-gradient(circle at 50% 50%,rgba(32,229,255,.12),transparent 60%);background-size:28px 28px,28px 28px,100% 100%;border:1px solid rgba(255,255,255,.1)}.canvas-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.node{position:absolute;width:172px;min-height:76px;border-radius:18px;padding:12px;background:linear-gradient(145deg,rgba(26,33,61,.96),rgba(13,18,36,.96));border:1px solid rgba(255,255,255,.13);box-shadow:0 20px 48px rgba(0,0,0,.34),0 0 22px rgba(155,92,255,.11);touch-action:none}.node.active{outline:2px solid var(--cyan);box-shadow:0 0 32px rgba(32,229,255,.34)}.node strong{font-size:12px;letter-spacing:.08em;color:#e9edff}.node small{display:block;color:var(--muted);margin-top:7px}.node .handle{position:absolute;right:-7px;top:32px;width:14px;height:14px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}.palette{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.chip{padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);font-size:12px}.panel-split{display:grid;gap:14px}.input,textarea,select{width:100%;background:rgba(6,8,20,.75);border:1px solid rgba(255,255,255,.12);color:white;border-radius:14px;padding:12px;outline:none}textarea{min-height:165px;resize:vertical}.field{display:grid;gap:7px;margin-bottom:12px}.field label{color:#cfd7f6;font-size:13px}.node-editor{display:grid;gap:10px}.doc{height:220px;overflow:auto;white-space:pre-wrap;color:#cfd7f6;background:rgba(0,0,0,.2);border-radius:16px;padding:14px;border:1px solid rgba(255,255,255,.08)}.infra-layout{grid-template-columns:1.1fr .9fr}.db-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.db-card{padding:16px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}.badge{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;background:rgba(66,245,155,.12);color:#9dffc9;border:1px solid rgba(66,245,155,.25);font-size:12px}.badge.warn{background:rgba(255,200,87,.12);color:#ffe1a1;border-color:rgba(255,200,87,.25)}.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}.table th,.table td{padding:12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;color:#dae2ff}.table th{color:var(--muted);font-size:12px;text-transform:uppercase}.timeline{display:grid;gap:10px;max-height:340px;overflow:auto}.timeitem{border-left:2px solid var(--accent);padding:8px 0 8px 13px;color:#dbe3ff}.gitops{max-width:980px}.topology{position:relative;height:620px;overflow:hidden;background:radial-gradient(circle at center,rgba(32,229,255,.16),transparent 45%),#080b19}.topology svg{position:absolute;inset:0;width:100%;height:100%}.top-node{position:absolute;transform:translate(-50%,-50%);width:126px;height:126px;border-radius:36px;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,rgba(155,92,255,.38),rgba(32,229,255,.16));border:1px solid rgba(255,255,255,.2);box-shadow:0 0 46px rgba(155,92,255,.32)}.top-small{width:105px;height:105px;border-radius:30px}.packet{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan);animation:packet 1.2s ease-out forwards}@keyframes packet{from{opacity:1;transform:scale(1)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(2.2)}}.logs{height:520px;overflow:auto;background:#060813;border-radius:18px;padding:14px;border:1px solid rgba(255,255,255,.08);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}.logline{padding:8px;border-bottom:1px solid rgba(255,255,255,.06);color:#cbd5ff}.logline.error{color:#ff9aad}.logline.warn{color:#ffe1a1}.modal{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.show{display:flex}.modal-card{width:min(560px,100%);background:#0e1327;border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:22px;box-shadow:var(--shadow)}.toast{position:fixed;right:22px;bottom:22px;max-width:420px;background:#10172d;border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);display:none;z-index:30}.toast.show{display:block}@media(max-width:1040px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.nav{grid-template-columns:repeat(2,1fr)}.designer,.infra-layout{grid-template-columns:1fr}.canvas-wrap{height:520px}.content{padding:16px}}@media(max-width:620px){.sidebar{padding:14px}.nav{grid-template-columns:1fr}.topbar{align-items:flex-start;flex-direction:column}.actions,.actions .btn{width:100%}.btn{justify-content:center}.canvas-wrap{height:480px}.node{width:150px}.topology{height:520px}.top-node{width:92px;height:92px;border-radius:26px;font-size:12px}.top-small{width:80px;height:80px}.card{padding:14px}}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="emoji">🎉</div>
-        <h1>Success!</h1>
-        <p>Your website is running on Pterodactyl!</p>
-        <div class="success">✅ Deployment Successful</div>
-        
-        <div class="info">
-            <h3>📋 Server Information</h3>
-            <p><strong>Status:</strong> Online</p>
-            <p><strong>Framework:</strong> Node.js + Express</p>
-            <p><strong>Port:</strong> <code id="port">Loading...</code></p>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">⟠</div><div><h1>LogiFlow</h1><span>Autonomous Backend Generator</span></div></div>
+      <div class="status-card"><span class="dot"></span><strong id="healthText">Booting</strong><p class="subtitle">Docker-aware GitOps control plane with live flow routing.</p></div>
+      <nav class="nav">
+        <button class="active" data-page="designer"><span class="ico">🧩</span>API Canvas Designer</button>
+        <button data-page="infra"><span class="ico">☁️</span>Infrastructure Manager</button>
+        <button data-page="gitops"><span class="ico">🔁</span>GitOps Sync Console</button>
+        <button data-page="topology"><span class="ico">🛰️</span>Cluster Topology</button>
+        <button data-page="logs"><span class="ico">📟</span>System Logs</button>
+      </nav>
+      <div class="status-card"><div class="muted">Active databases</div><h2 id="dbCount">0</h2><div class="muted">Deployed flows</div><h2 id="flowCount">0</h2></div>
+    </aside>
+    <main class="content">
+      <section id="designer" class="page active">
+        <div class="topbar"><div><h2>Dual-Input API Design Canvas</h2><p>Draw nodes or type instructions; both compile to live Express wildcard endpoints.</p></div><div class="actions"><button class="btn" id="saveFlow">Save Flow</button><button class="btn primary" id="deployFlow">Deploy Flow</button><button class="btn success" id="exportEdge">Export to Edge</button></div></div>
+        <div class="grid designer">
+          <div class="card"><h3>Canvas Workboard</h3><div class="palette" id="palette"></div><div class="canvas-wrap" id="canvas"><svg class="canvas-svg" id="edges"></svg></div></div>
+          <div class="panel-split">
+            <div class="card"><h3>Text / AI Prompt Panel</h3><textarea id="prompt" placeholder="Create a POST endpoint /register, validate email, insert into users, generate token, respond created..."></textarea><div class="actions"><button class="btn primary" id="compilePrompt">Compile Text to Flow</button><button class="btn" id="syncPrompt">Explain Current Flow</button></div></div>
+            <div class="card"><h3>Selected Node Configuration</h3><div id="nodeEditor" class="node-editor muted">Select a node to configure database targets, tables, conditions, and response codes.</div></div>
+            <div class="card"><h3>AI-Copilot Explainer</h3><div class="doc" id="explainer"></div></div>
+          </div>
         </div>
-    </div>
-    
-    <script>
-        // Fetch server info
-        fetch('/health')
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('port').textContent = data.port;
-            })
-            .catch(() => {
-                document.getElementById('port').textContent = 'N/A';
-            });
-    </script>
+      </section>
+
+      <section id="infra" class="page">
+        <div class="topbar"><div><h2>Infrastructure Engine & Schema Viewer</h2><p>SparkDB-style provisioning for Docker databases plus local Excel and Access file engines.</p></div><button class="btn primary" id="openProvision">+ Create database</button></div>
+        <div class="grid infra-layout">
+          <div class="card"><h3>Live Provisioned Engines</h3><div class="db-grid" id="dbGrid"></div></div>
+          <div class="card"><h3>Schema Versions</h3><div class="timeline" id="timeline"></div></div>
+          <div class="card"><h3>Schema & Data Grid</h3><div class="field"><label>Database</label><select id="viewerDb"></select></div><div class="actions"><button class="btn" id="loadRows">Load Rows</button><button class="btn success" id="insertSample">Insert Sample Row</button></div><div style="overflow:auto;margin-top:12px"><table class="table" id="dataTable"></table></div></div>
+          <div class="card"><h3>Watchdog Metrics</h3><div id="metrics" class="doc"></div></div>
+        </div>
+      </section>
+
+      <section id="gitops" class="page">
+        <div class="topbar"><div><h2>GitOps SDK Sync Console</h2><p>Generate and commit <strong>logiflow-client.js</strong> directly into a repository with native GitHub API calls.</p></div><span class="badge" id="githubBadge">Not linked</span></div>
+        <div class="card gitops"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))"><div class="field"><label>GitHub PAT</label><input class="input" id="ghToken" type="password" placeholder="github_pat_..."></div><div class="field"><label>Repo Owner</label><input class="input" id="ghOwner" placeholder="owner"></div><div class="field"><label>Repo Name</label><input class="input" id="ghRepo" placeholder="repository"></div><div class="field"><label>Target Branch</label><input class="input" id="ghBranch" value="main"></div></div><button class="btn primary" id="pushSdk">+ Push SDK to Repo</button><pre class="doc" id="sdkPreview"></pre></div>
+      </section>
+
+      <section id="topology" class="page">
+        <div class="topbar"><div><h2>Live Cluster Infrastructure Topology</h2><p>Traffic pulses show real calls through /api/simulated/:flowId/* into databases and GitHub.</p></div><button class="btn" id="refreshTopology">Refresh</button></div>
+        <div class="card topology" id="topologyMap"><svg id="topologySvg"></svg></div>
+      </section>
+
+      <section id="logs" class="page">
+        <div class="topbar"><div><h2>Live Endpoint System Logs</h2><p>Provisioning, watchdog, GitOps sync, and route execution events stream in real time.</p></div></div>
+        <div class="logs" id="logsBox"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="provisionModal"><div class="modal-card"><div class="topbar"><div><h2 style="font-size:26px">Provision Database</h2><p>Launch a real Docker engine or isolated local file database.</p></div><button class="btn" id="closeProvision">✕</button></div><div class="field"><label>Database Name</label><input class="input" id="dbName" value="production-main"></div><div class="field"><label>Admin Username</label><input class="input" id="dbUser" value="logiflow"></div><div class="field"><label>Admin Password</label><input class="input" id="dbPass" type="password" value="LogiFlowStrongPass123!"></div><div class="field"><label>Engine</label><select id="dbEngine"><option value="postgres">Postgres</option><option value="mysql">MySQL</option><option value="mongodb">MongoDB</option><option value="redis">Redis</option><option value="access">Microsoft Access File</option><option value="excel">Excel Spreadsheet</option></select></div><button class="btn primary" id="provisionBtn">Provision Now</button></div></div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const nodeTypes=['INCOMING_REQUEST','RATE_LIMITER','AUTH_VERIFY_TOKEN','CONDITION','TRANSFORM_DATA','DB_INSERT','DB_FIND','AUTH_GENERATE_TOKEN','EXT_API_CALL','HTTP_RESPONSE'];
+    const state={databases:[],flows:[],schemaVersions:[],logs:[],metrics:{},github:{},selected:null,currentFlow:{id:null,name:'Production API Flow',nodes:[{id:'n0',type:'INCOMING_REQUEST',x:60,y:90,config:{}},{id:'n1',type:'TRANSFORM_DATA',x:270,y:150,config:{addCreatedAt:true}},{id:'n2',type:'HTTP_RESPONSE',x:500,y:90,config:{status:200}}],edges:[{from:'n0',to:'n1'},{from:'n1',to:'n2'}],deployed:false}};
+    const $=id=>document.getElementById(id);
+    function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4200)}
+    async function api(url,opts={}){const res=await fetch(url,{headers:{'content-type':'application/json'},...opts});const data=await res.json().catch(()=>({}));if(!res.ok)throw new Error(data.error||res.statusText);return data}
+    function page(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='topology')renderTopology()}
+    document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>page(b.dataset.page));
+    async function load(){const s=await api('/api/state');state.databases=s.databases;state.flows=s.flows;state.schemaVersions=s.schemaVersions;state.logs=s.logs;state.metrics=s.metrics;state.github=s.github;if(!state.currentFlow.id&&state.flows[0])state.currentFlow=state.flows[0];renderAll();$('healthText').textContent='Online'}
+    function renderAll(){renderPalette();renderCanvas();renderEditor();renderExplainer();renderDbGrid();renderTimeline();renderDbSelects();renderMetrics();renderLogs();renderGithub();renderTopology();$('dbCount').textContent=state.databases.length;$('flowCount').textContent=state.flows.filter(f=>f.deployed).length}
+    function renderPalette(){ $('palette').innerHTML=nodeTypes.map(t=>`<button class="chip" data-type="${t}">+ ${t}</button>`).join(''); document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>addNode(c.dataset.type)); }
+    function addNode(type){const i=state.currentFlow.nodes.length;state.currentFlow.nodes.push({id:'n'+Date.now(),type,x:80+(i%4)*190,y:90+Math.floor(i/4)*120,config:{}}); if(i)state.currentFlow.edges.push({from:state.currentFlow.nodes[i-1].id,to:state.currentFlow.nodes[i].id});renderCanvas();renderExplainer()}
+    function renderCanvas(){const c=$('canvas');c.querySelectorAll('.node').forEach(n=>n.remove());state.currentFlow.nodes.forEach(n=>{const el=document.createElement('div');el.className='node'+(state.selected===n.id?' active':'');el.style.left=n.x+'px';el.style.top=n.y+'px';el.innerHTML=`<strong>${n.type}</strong><small>${Object.entries(n.config||{}).slice(0,2).map(([k,v])=>k+': '+String(v).slice(0,18)).join('<br>')||'click to configure'}</small><span class="handle"></span>`;el.onpointerdown=e=>drag(e,n,el);el.onclick=e=>{e.stopPropagation();state.selected=n.id;renderCanvas();renderEditor()};c.appendChild(el)});renderEdges()}
+    function drag(e,n,el){if(e.target.className==='handle')return;el.setPointerCapture(e.pointerId);const sx=e.clientX,sy=e.clientY,ox=n.x,oy=n.y;el.onpointermove=ev=>{n.x=Math.max(0,ox+ev.clientX-sx);n.y=Math.max(0,oy+ev.clientY-sy);el.style.left=n.x+'px';el.style.top=n.y+'px';renderEdges()};el.onpointerup=()=>{el.onpointermove=null;renderExplainer()}}
+    function renderEdges(){const svg=$('edges');svg.innerHTML='';state.currentFlow.edges.forEach(e=>{const a=state.currentFlow.nodes.find(n=>n.id===e.from),b=state.currentFlow.nodes.find(n=>n.id===e.to);if(!a||!b)return;const x1=a.x+172,y1=a.y+38,x2=b.x,y2=b.y+38;const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',`M${x1} ${y1} C ${x1+70} ${y1}, ${x2-70} ${y2}, ${x2} ${y2}`);p.setAttribute('fill','none');p.setAttribute('stroke','url(#g)');p.setAttribute('stroke-width','3');svg.appendChild(p)});svg.insertAdjacentHTML('afterbegin','<defs><linearGradient id="g"><stop stop-color="#20e5ff"/><stop offset="1" stop-color="#9b5cff"/></linearGradient></defs>')}
+    function renderEditor(){const n=state.currentFlow.nodes.find(x=>x.id===state.selected);if(!n){$('nodeEditor').innerHTML='Select a node to configure database targets, tables, conditions, and response codes.';return}const dbOpts=state.databases.map(d=>`<option value="${d.id}" ${n.config.databaseId===d.id?'selected':''}>${d.name} (${d.engine})</option>`).join('');$('nodeEditor').innerHTML=`<div class="field"><label>Node Type</label><input class="input" value="${n.type}" disabled></div>${['DB_INSERT','DB_FIND'].includes(n.type)?`<div class="field"><label>Target Database</label><select id="cfgDb">${dbOpts||'<option>No databases provisioned</option>'}</select></div><div class="field"><label>Table / Collection / Sheet</label><input class="input" id="cfgTable" value="${n.config.table||'default'}"></div>`:''}${n.type==='HTTP_RESPONSE'?`<div class="field"><label>Status</label><input class="input" id="cfgStatus" type="number" value="${n.config.status||200}"></div>`:''}${n.type==='CONDITION'?`<div class="field"><label>Field</label><input class="input" id="cfgField" value="${n.config.field||'email'}"></div><div class="field"><label>Value Contains</label><input class="input" id="cfgValue" value="${n.config.value||'@'}"></div>`:''}<button class="btn primary" id="applyCfg">Apply Node Config</button>`;$('applyCfg').onclick=()=>{if($('cfgDb'))n.config.databaseId=$('cfgDb').value;if($('cfgTable'))n.config.table=$('cfgTable').value;if($('cfgStatus'))n.config.status=Number($('cfgStatus').value);if($('cfgField')){n.config.field=$('cfgField').value;n.config.operator='contains';n.config.value=$('cfgValue').value}renderCanvas();renderExplainer()}}
+    function renderExplainer(){const lines=['# '+state.currentFlow.name,'','Endpoint after deployment: `/api/simulated/'+(state.currentFlow.id||'<flowId>')+'/run`','','Pipeline:'];state.currentFlow.nodes.forEach((n,i)=>lines.push(`${i+1}. **${n.type}** ${JSON.stringify(n.config||{})}`));lines.push('','Databases available: '+(state.databases.map(d=>`${d.name} (${d.engine})`).join(', ')||'none yet'));$('explainer').textContent=lines.join('\n')}
+    $('compilePrompt').onclick=async()=>{const {flow}=await api('/api/flows/compile',{method:'POST',body:JSON.stringify({prompt:$('prompt').value})});state.currentFlow=flow;state.selected=null;renderAll();toast('Prompt compiled to flow')};
+    $('syncPrompt').onclick=renderExplainer;$('saveFlow').onclick=async()=>{const {flow}=await api('/api/flows',{method:'POST',body:JSON.stringify(state.currentFlow)});state.currentFlow=flow;await load();toast('Flow saved and bytecode compiled')};
+    $('deployFlow').onclick=async()=>{if(!state.currentFlow.id)(await $('saveFlow').onclick());const {endpoint}=await api('/api/flows/'+state.currentFlow.id+'/deploy',{method:'POST'});await load();toast('Deployed: '+endpoint)};
+    $('exportEdge').onclick=()=>{if(!state.currentFlow.id)return toast('Save the flow before exporting');location.href='/api/flows/'+state.currentFlow.id+'/export'};
+    $('openProvision').onclick=()=>$('provisionModal').classList.add('show');$('closeProvision').onclick=()=>$('provisionModal').classList.remove('show');
+    $('provisionBtn').onclick=async()=>{try{$('provisionBtn').textContent='Provisioning...';await api('/api/provision',{method:'POST',body:JSON.stringify({name:$('dbName').value,username:$('dbUser').value,password:$('dbPass').value,engine:$('dbEngine').value})});$('provisionModal').classList.remove('show');await load();toast('Database provisioned and available in DB nodes')}catch(e){toast(e.message)}finally{$('provisionBtn').textContent='Provision Now'}};
+    function renderDbGrid(){$('dbGrid').innerHTML=state.databases.map(d=>`<div class="db-card"><span class="badge ${d.status==='running'||d.status==='healed'?'':'warn'}">${d.status}</span><h3>${d.name}</h3><p class="muted">${d.engine} • ${d.host}${d.port?':'+d.port:''}</p><p class="muted">CPU ${d.cpu||'n/a'} • Memory ${d.memory||'n/a'}</p></div>`).join('')||'<p class="muted">No databases yet. Create one to populate DB_INSERT and DB_FIND dropdowns.</p>'}
+    function renderTimeline(){$('timeline').innerHTML=state.schemaVersions.map(v=>`<div class="timeitem"><strong>${v.label}</strong><br><span class="muted">${new Date(v.at).toLocaleString()}</span></div>`).join('')||'<p class="muted">No schema versions yet.</p>'}
+    function renderDbSelects(){const opts=state.databases.map(d=>`<option value="${d.id}">${d.name} (${d.engine})</option>`).join('');$('viewerDb').innerHTML=opts;renderEditor()}
+    $('insertSample').onclick=async()=>{const db=$('viewerDb').value;if(!db)return toast('Create a database first');await api('/api/query/'+db+'/insert',{method:'POST',body:JSON.stringify({table:'default',payload:{message:'hello from LogiFlow',value:Math.round(Math.random()*999)}})});toast('Sample row inserted');$('loadRows').onclick()};
+    $('loadRows').onclick=async()=>{const db=$('viewerDb').value;if(!db)return;const {result}=await api('/api/query/'+db+'/find',{method:'POST',body:JSON.stringify({table:'default',criteria:{}})});const rows=Array.isArray(result)?result:[result].filter(Boolean);const keys=[...new Set(rows.flatMap(r=>Object.keys(r||{})))];$('dataTable').innerHTML='<thead><tr>'+keys.map(k=>`<th>${k}</th>`).join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+keys.map(k=>`<td>${JSON.stringify(r[k]??'').replace(/^"|"$/g,'')}</td>`).join('')+'</tr>').join('')+'</tbody>'};
+    function renderMetrics(){$('metrics').textContent=JSON.stringify(state.metrics,null,2)}
+    function renderGithub(){$('githubBadge').textContent=state.github.status||'Not linked';$('sdkPreview').textContent='The generated SDK includes '+state.flows.length+' flows and '+state.databases.length+' database descriptors. Click push to commit logiflow-client.js.'}
+    $('pushSdk').onclick=async()=>{try{await api('/api/github/push-sdk',{method:'POST',body:JSON.stringify({token:$('ghToken').value,owner:$('ghOwner').value,repo:$('ghRepo').value,branch:$('ghBranch').value})});await load();toast('SDK pushed to GitHub')}catch(e){toast(e.message)}};
+    function renderTopology(){const box=$('topologyMap'),svg=$('topologySvg');if(!box||!svg)return;box.querySelectorAll('.top-node').forEach(n=>n.remove());svg.innerHTML='';const w=box.clientWidth||800,h=box.clientHeight||600,center={x:w/2,y:h/2};addTopNode('LogiFlow App',center.x,center.y,'');const items=[...state.databases.map(d=>({label:d.name+'\n'+d.engine,type:'db'})),...(state.github.linked?[{label:state.github.owner+'/'+state.github.repo,type:'git'}]:[])];items.forEach((it,i)=>{const a=(Math.PI*2/items.length)*i-Math.PI/2,r=Math.min(w,h)*.34,x=center.x+Math.cos(a)*r,y=center.y+Math.sin(a)*r;line(center.x,center.y,x,y);addTopNode(it.label,x,y,'top-small')});function line(x1,y1,x2,y2){const l=document.createElementNS('http://www.w3.org/2000/svg','line');l.setAttribute('x1',x1);l.setAttribute('y1',y1);l.setAttribute('x2',x2);l.setAttribute('y2',y2);l.setAttribute('stroke','#20e5ff');l.setAttribute('stroke-opacity','.45');l.setAttribute('stroke-width','2');svg.appendChild(l)}function addTopNode(label,x,y,cls){const d=document.createElement('div');d.className='top-node '+cls;d.style.left=x+'px';d.style.top=y+'px';d.innerHTML='<strong>'+label.replace('\n','<br>')+'</strong>';box.appendChild(d)}}
+    function packet(){const box=$('topologyMap');if(!box)return;const p=document.createElement('div');p.className='packet';p.style.left='50%';p.style.top='50%';p.style.setProperty('--dx',(Math.random()*360-180)+'px');p.style.setProperty('--dy',(Math.random()*260-130)+'px');box.appendChild(p);setTimeout(()=>p.remove(),1300)}
+    function renderLogs(){ $('logsBox').innerHTML=state.logs.map(l=>`<div class="logline ${l.level}">[${new Date(l.at).toLocaleTimeString()}] ${l.level.toUpperCase()} ${l.message} ${JSON.stringify(l.meta||{})}</div>`).join('') }
+    $('refreshTopology').onclick=renderTopology;
+    const es=new EventSource('/api/events');['log','database','flow','github','metrics'].forEach(ev=>es.addEventListener(ev,()=>load().catch(()=>{})));es.addEventListener('pulse',()=>packet());
+    load().catch(e=>{$('healthText').textContent='API unavailable';toast(e.message)});
+  </script>
 </body>
 </html>
