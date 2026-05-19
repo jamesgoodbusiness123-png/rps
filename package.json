@@ -1,12 +1,19 @@
 {
-  "name": "pterodactyl-test-site",
+  "name": "logiflow-autonomous-backend-generator",
   "version": "1.0.0",
-  "description": "Test website for Pterodactyl panel deployment",
+  "description": "LogiFlow autonomous backend generator, Docker infrastructure manager, and GitOps SDK sync console",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --check server.js"
   },
-  "keywords": ["pterodactyl", "nodejs", "express"],
+  "keywords": [
+    "logiflow",
+    "gitops",
+    "docker",
+    "express",
+    "infrastructure"
+  ],
   "author": "Joy Tree Host",
   "license": "MIT",
   "dependencies": {
